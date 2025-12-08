@@ -7,7 +7,7 @@ namespace TaskApp.Services
     {
         private readonly string logPath = "logs.txt";
 
-        public void Log(string message)
+        public virtual void Log(string message)
         {
             string entry = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}";
             File.AppendAllText(logPath, entry + Environment.NewLine);

@@ -61,7 +61,8 @@ namespace TaskApp.Services
         public List<TaskItem> SearchByTitle(string keyword)
         {
             return tasks
-                .Where(t => t.Title.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+                .Where(t => t.Title != null &&
+                            t.Title.ToLower().Contains(keyword.ToLower()))
                 .ToList();
         }
 
