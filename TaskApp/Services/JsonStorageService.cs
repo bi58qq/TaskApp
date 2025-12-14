@@ -21,13 +21,13 @@ namespace TaskApp.Services
             }
             catch (JsonException)
             {
-                Console.WriteLine("⚠ JSON file corrupted! Creating backup...");
+                Console.WriteLine("JSON file corrupted! Creating backup...");
                 File.Copy(filePath, filePath + ".bak", overwrite: true);
                 return new List<T>();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("⚠ Error loading data: " + ex.Message);
+                Console.WriteLine("Error loading data: " + ex.Message);
                 return new List<T>();
             }
         }
@@ -41,7 +41,7 @@ namespace TaskApp.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("⚠ Error saving data: " + ex.Message);
+                Console.WriteLine("Error saving data: " + ex.Message);
             }
         }
     }
